@@ -14,7 +14,7 @@ sudo cp -r stelligent-site-install-cookbook /var/chef/cookbooks
 # download and correct the issues with the nginx/ohai community cookbooks.
 # This is a quick fix, and not a long term solution.
 cd /var/chef/cookbooks/stelligent-site-install-cookbook
-sudo berks install
+sudo berks vendor
 sudo mv ~/.berkshelf/cookbooks/nginx* ~/.berkshelf/cookbooks/nginx
 sudo mv ~/.berkshelf/cookbooks/ohai* ~/.berkshelf/cookbooks/ohai
 
