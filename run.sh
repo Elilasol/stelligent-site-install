@@ -10,13 +10,8 @@ sudo mkdir /var/chef/cookbooks
 sudo cp -r stelligent-site-install-cookbook /var/chef/cookbooks
 
 # berks install/ohai,nginx fixes
-# Normally I wouldn't be doing things this way, but I don't have time to 
-# download and correct the issues with the nginx/ohai community cookbooks.
-# This is a quick fix, and not a long term solution.
 cd /var/chef/cookbooks/stelligent-site-install-cookbook
 sudo berks vendor
-sudo mv ~/.berkshelf/cookbooks/nginx* ~/.berkshelf/cookbooks/nginx
-sudo mv ~/.berkshelf/cookbooks/ohai* ~/.berkshelf/cookbooks/ohai
 
 # run chef
 sudo chef-solo -c /var/chef/cookbooks/stelligent-site-install-cookbook/solo.rb -j /var/chef/cookbooks/stelligent-site-install-cookbook/web.json
