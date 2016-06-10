@@ -11,7 +11,6 @@ sudo cp -r stelligent-site-install /var/chef/cookbooks
 
 # berks install/ohai,nginx fixes
 cd /var/chef/cookbooks/stelligent-site-install
-sudo berks vendor
 
 # run chef
 sudo chef-solo -c /var/chef/cookbooks/stelligent-site-install/solo.rb -j /var/chef/cookbooks/stelligent-site-install/web.json
