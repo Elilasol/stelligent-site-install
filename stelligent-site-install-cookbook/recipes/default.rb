@@ -22,6 +22,13 @@ directory "/var/www/#{node['stelligent']['site']}" do
   recursive true
 end
 
+template "/var/www/#{node['stelligent']['site']}" do
+  source 'index.html.erb'
+  owner 'www'
+  group 'www'
+  mode '0755'
+end
+
 nginx_site "#{node['stelligent']['site']}" do
   enable true
   template "#{node['stelligent']['site']}.erb"
