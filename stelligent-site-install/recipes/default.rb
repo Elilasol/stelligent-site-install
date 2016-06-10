@@ -22,8 +22,8 @@ directory "/var/www/#{node['stelligent']['site']}" do
   recursive true
 end
 
-template "/var/www/#{node['stelligent']['site']}" do
-  source 'index.html.erb'
+template 'index.html' do
+  path "/var/www/#{node['stelligent']['site']}/index.html"
   owner 'www'
   group 'www'
   mode '0755'
