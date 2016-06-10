@@ -5,7 +5,8 @@ wget https://packages.chef.io/stable/ubuntu/12.04/chefdk_0.14.25-1_amd64.deb
 dpkg -i chefdk_0.14.25-1_amd64.deb
 
 # move cookbook to /var/chef/cookbooks
-mkdir -r /var/chef/cookbooks
+mkdir /var/chef
+mkdir /var/chef/cookbooks
 mv stelligent-site-install /var/chef/cookbooks
 
 # berks install/ohai,nginx fixes
